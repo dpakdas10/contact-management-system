@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Management System</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.8/xlsx.full.min.js"></script>
+  </head>
+  <body>
+    <h2>Contact Management System</h2>
+
+    <form id="contactForm">
+      <label for="name">Name:</label>
+      <input type="text" id="name" required />
+
+      <label for="phone">Phone Number:</label>
+      <input type="tel" id="phone" required />
+
+      <label for="email">Email Address:</label>
+      <input type="email" id="email" required />
+
+      <button type="button" onclick="addContact()">Add Contact</button>
+      <button type="button" onclick="exportToExcel()">Export to Excel</button>
+    </form>
+
+    <!-- Modal for editing -->
+    <div id="editModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h3>Edit Contact</h3>
+        <label for="editName">Name:</label>
+        <input type="text" id="editName" required />
+
+        <label for="editPhone">Phone Number:</label>
+        <input type="tel" id="editPhone" required />
+
+        <label for="editEmail">Email Address:</label>
+        <input type="email" id="editEmail" required />
+
+        <button type="button" onclick="saveChanges()">Save Changes</button>
+      </div>
+    </div>
+
+    <table id="contactTable">
+      <tr>
+        <th>Name</th>
+        <th>Phone Number</th>
+        <th>Email Address</th>
+        <th>Action</th>
+      </tr>
+    </table>
+    <script src="script.js"></script>
+  </body>
+</html>
